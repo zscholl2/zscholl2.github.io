@@ -1,0 +1,38 @@
+:root{
+  --scrollbar-color:cornflowerblue;
+  --scrollbar-background-color:transparent;
+  --scrollbar-width:10px;
+}
+
+/* webkit */
+@supports(-webkit-appearance:none){
+  ::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
+  }
+  ::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-background-color);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+  }
+  ::-webkit-scrollbar-button{
+    background-color:var(--scrollbar-background-color);
+    width:0;
+    height:0;
+  }
+  ::-webkit-scrollbar-track-piece{
+    background-color:var(--scrollbar-background-color);
+  }
+  ::-webkit-scrollbar-corner{
+    background-color:var(--scrollbar-background-color);
+  }
+}
+
+/* moz */
+@supports(-moz-appearance:none){
+  *{
+    /* scrollbar-width:thin!important; */
+    scrollbar-color: var(--scrollbar-color) var(--scrollbar-background-color);
+  } 
+}

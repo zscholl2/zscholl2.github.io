@@ -1,0 +1,62 @@
+/**
+ * global overrides to prevent weird behavior
+ * on mobile
+ */
+ *{
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-modify: none;
+  -moz-user-modify: none;
+  -webkit-user-callout: none;
+  -webkit-user-drag: none;
+  -webkit-highlight: none;
+  -webkit-touch-callout: none;
+  scroll-behavior: smooth;
+}
+
+img{
+  /* prevent accidental selection */
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  /* but still keep touch-callout on mobile */
+  -webkit-touch-callout: default;
+}
+
+:root{
+  font-family: 'Times New Roman';
+  font-size: 16px;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+/* actual styling, not bugfixes */
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  overflow: hidden;
+  border-color: blue;
+}
+
+body{
+  overflow: auto;
+  border-color: green;
+}

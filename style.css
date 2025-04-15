@@ -1,0 +1,360 @@
+:root{
+  font-size: 16px;
+  font-family: 'Helvetica';
+/*   background-color: rgb( 40, 40, 40 ); */
+  color: gray;
+}
+
+*{
+  scrollbar-width: thin;
+}
+
+img{
+/*   display: none; */
+}
+
+textarea, input{
+  font-family: 'MS Gothic';
+  font-size: 14px;
+}
+
+details > summary{
+  cursor: help;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+[data-hide]{
+  display: none;
+}
+
+:root, html, body{
+  border: 0;
+}
+
+main{
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+main > nav{
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  white-space: nowrap;
+  overflow: auto;
+  font-size: 0;
+}
+main > nav > *{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom;
+  height: fit-content;
+  vertical-align: top;
+  font-size: 16px;
+}
+
+main > nav > .name-title{
+  font-weight: bold;
+  height: 100%;
+  width: 100px;
+  padding: 5px;
+  font-size: 22px;
+}
+
+main > nav > :not(.name-title) {
+  padding: 2px;
+  margin-left: 3px;
+}
+
+main > nav > a{
+  color: lightseagreen;
+  border: 1px solid transparent;
+}
+
+main > nav img{
+  display: none;
+}
+
+main > section{
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  height: calc( 100% - 50px );
+  border: 1px solid lightseagreen;
+/*   background-color: rgb( 40, 40, 40 ); */
+  overflow: hidden;
+  
+  opacity: 0;
+  pointer-events: none;
+  transition-property: opacity;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+main > section > div{
+  padding: 20px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  max-width: 640px;
+}
+
+main > section > div > .subpage-title{
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 72px;
+  height: 100%;
+  
+  top: 200%;
+  transition-property: top;
+  transition-timing-function: ease-out;
+  transition-duration: 200ms;
+}
+
+main > section > div > .subpage-title::after{
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  transform-origin: top left;
+  transform:rotate( -90deg ) translate( -100% );
+  font-size: 40px;
+  padding-right:20px;
+  padding-top:2px;
+  white-space: nowrap;
+}
+
+main > section > div > .content{
+  position: absolute;
+  display: block;
+  left: 72px;
+  top: 0;
+  width: calc( 100% - 72px );
+  height: 100%;
+  padding: 20px;
+  overflow: auto;
+}
+
+main > section > div > .content img{
+  max-width: min( 100%, 400px );
+  max-height: 300px;
+  margin-bottom: 20px;
+}
+
+@media ( max-aspect-ratio: 1/1 ){
+  /* portrait mode */
+  main > section{
+  }
+}
+
+
+
+
+
+#home:target * section.home,
+#home:target ~ * section.home{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#home:target * nav a[href='#home'],
+#home:target ~ * nav a[href='#home']{
+  color: seagreen;
+  border: 1px solid;
+}
+
+#home:target * section.home > div > .subpage-title,
+#home:target ~ * section.home > div > .subpage-title{
+  top: 0;
+}
+
+section.home .subpage-title::after{
+  content:'home';
+}
+
+
+
+
+
+#bio:target * section.bio,
+#bio:target ~ * section.bio{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#bio:target * nav a[href='#bio'],
+#bio:target ~ * nav a[href='#bio']{
+  color: seagreen;
+  border: 1px solid;
+}
+
+section.bio .subpage-title::after{
+  content:'biography';
+}
+
+#bio:target * section.bio > div > .subpage-title,
+#bio:target ~ * section.bio > div > .subpage-title{
+  top: 0;
+}
+
+
+
+#plan:target * section.plan,
+#plan:target ~ * section.plan{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#plan:target * nav a[href='#plan'],
+#plan:target ~ * nav a[href='#plan']{
+  color: seagreen;
+  border: 1px solid;
+}
+
+section.plan .subpage-title::after{
+  content:'5-year plan';
+}
+
+#plan:target * section.plan > div > .subpage-title,
+#plan:target ~ * section.plan > div > .subpage-title{
+  top: 0;
+}
+
+
+
+
+
+
+
+#job:target * section.job,
+#job:target ~ * section.job{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#job:target * nav a[href='#job'],
+#job:target ~ * nav a[href='#job']{
+  color: seagreen;
+  border: 1px solid;
+}
+
+section.job .subpage-title::after{
+  content:'career outline';
+}
+
+#job:target * section.job > div > .subpage-title,
+#job:target ~ * section.job > div > .subpage-title{
+  top: 0;
+}
+
+
+
+
+
+
+
+
+
+#vid:target * section.vid,
+#vid:target ~ * section.vid{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#vid:target * nav a[href='#vid'],
+#vid:target ~ * nav a[href='#vid']{
+  color: seagreen;
+  border: 1px solid;
+}
+
+section.vid .subpage-title::after{
+  content:'video';
+}
+
+#vid:target * section.vid > div > .subpage-title,
+#vid:target ~ * section.vid > div > .subpage-title{
+  top: 0;
+}
+
+
+
+
+
+#pix:target * section.pix,
+#pix:target ~ * section.pix{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#pix:target * nav a[href='#pix'],
+#pix:target ~ * nav a[href='#pix']{
+  color: seagreen;
+  border: 1px solid;
+}
+
+section.pix .subpage-title::after{
+  content:'gallery';
+}
+
+#pix:target * section.pix > div > .subpage-title,
+#pix:target ~ * section.pix > div > .subpage-title{
+  top: 0;
+}
+
+
+
+
+
+
+
+#news:target * section.news,
+#news:target ~ * section.news{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#news:target * nav a[href='#news'],
+#news:target ~ * nav a[href='#news']{
+  color: seagreen;
+  border: 1px solid;
+}
+
+
+
+
+#ama:target * section.ama,
+#ama:target ~ * section.ama{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#ama:target * nav a[href='#ama'],
+#ama:target ~ * nav a[href='#ama']{
+  color: seagreen;
+  border: 1px solid;
+}
+
+
+form > *{
+  display: block;
+}
